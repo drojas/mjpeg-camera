@@ -13,7 +13,7 @@ program
   .option('-pw --password []', 'Set the password for camera authentication')
   .option('-l --url []', 'Set the url for the camera')
   .option('-p --port [8080]', 'Set the port for the http server to listen on', parseInt)
-  .option('-a --address [0.0.0.0]', 'Set the address for the http server to listen on', parseInt)
+  .option('-a --address [0.0.0.0]', 'Set the address for the http server to listen on')
   .option('-n --name [camera]', 'Set the name of the camera')
   .parse(process.argv);
 
