@@ -13,6 +13,7 @@ program
   .option('-pw --password []', 'Set the password for camera authentication')
   .option('-l --url []', 'Set the url for the camera')
   .option('-p --port [8080]', 'Set the port for the http server to listen on', parseInt)
+  .option('-a --address [0.0.0.0]', 'Set the address for the http server to listen on', parseInt)
   .option('-n --name [camera]', 'Set the name of the camera')
   .parse(process.argv);
 
@@ -31,6 +32,7 @@ camera.start();
 
 var boundary = '--boundandrebound';
 var port = program.port || 8080;
+var addr = program.address || '0.0.0.0';
 
 console.log('===', camera.name, 'camera server listening on', port, '===');
 
@@ -70,4 +72,4 @@ http.createServer(function(req, res) {
                 </body>\
               </html>');
   }
-}).listen(port);
+}).listen(port, addr);
